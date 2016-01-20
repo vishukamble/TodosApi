@@ -14,7 +14,8 @@ app.get('/',function (req, res) {
 });
 
 //GET /todos/?completed=true
-app.get('/todos',function (req, res) {
+app.get('/todos',function (req, res) 
+{
 	var queryParams = req.query;
 	var filteredTodos = todos;
 
@@ -34,10 +35,6 @@ app.get('/todos',function (req, res) {
 			return todo.description.toLowerCase().indexOf(queryParams.q.toLowerCase()) > -1;
 		});
 	}
-	
-
-
-
 	res.json(filteredTodos);
 });
 
